@@ -11,17 +11,17 @@
 |
 */
 
-Route::get('/', 'pagesController@home');
-Route::get('/about', 'pagesController@about');
-Route::get('/contact', 'pagesController@contact');
-Route::post('/contactMsg', 'pagesController@contactMsg');
+Route::get('/', 'PagesController@home');
+Route::get('/about', 'PagesController@about');
+Route::get('/contact', 'PagesController@contact');
+Route::post('/contactMsg', 'PagesController@contactMsg');
 
-Route::get('/projects/{domain}', 'projectController@show_project');
-Route::get('/singleProject/{id}', 'projectController@single_project');
-Route::post('/searchProject', 'projectController@search_project');
-Route::get('/addProject', 'projectController@projectForm');
-Route::post('/addProject', 'projectController@add_project');
-Route::post('/storeProject', 'projectController@store_project');
+Route::get('/projects/{domain}', 'ProjectController@show_project');
+Route::get('/singleProject/{id}', 'ProjectController@single_project');
+Route::post('/searchProject', 'ProjectController@search_project');
+Route::get('/addProject', 'ProjectController@projectForm');
+Route::post('/addProject', 'ProjectController@add_project');
+Route::post('/storeProject', 'ProjectController@store_project');
 
 
 // Route::get('/', function () {
