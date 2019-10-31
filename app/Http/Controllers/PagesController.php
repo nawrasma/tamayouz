@@ -8,15 +8,13 @@ use App\Message;
 class PagesController extends Controller
 {
     //
-
+    public function index()
+    {
+        $this->home();
+    }
     public function home()
     {
-    	$tasks = [
-			"go to work",
-			"go to market",
-			"go to home"
-		];
-	    return view('welcome',[ 'tasks'=> $tasks , 'name'=> 'Nawras']);
+	    return view('welcome');
     }
 
     public function about()
