@@ -1,0 +1,22 @@
+.baseDiv{
+	margin-left:5%; 
+}
+
+.divName{
+	width: 40%;margin:5%;
+	float: left;
+}
+
+video{
+	width: 80%;
+	margin:5% 10%; 
+}
+
+.box{
+	margin:5%;
+	float: left;
+}
+
+.btn_list{
+	text-align: end;
+}

@@ -46,7 +46,14 @@ Route::post('/storeProject', 'ProjectController@store_project');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home/projects', 'HomeController@all_projects')->name('Projects');
+Route::get('/home/project/{proID}', 'HomeController@single_project')->name('single project');
+Route::get('/home/projectAdd', 'HomeController@add_project')->name('add project');
+Route::post('/home/projectStroe', 'HomeController@store_project')->name('store project');
+Route::get('/home/orders', 'HomeController@all_orders')->name('new order');
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+// Auth::routes();
+
+// Route::get('/home', 'HomeController@index')->name('home');

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" id="main-stylesheet" data-version="1.1.0" href={{ asset('assestMaster/styles/shards-dashboards.1.1.0.min.css') }}>
     <link rel="stylesheet" href={{ asset('assestMaster/styles/extras.1.1.0.min.css') }}>
+    <link rel="stylesheet" href={{ asset('css/master_style.css') }}>
     <script async defer src="https://buttons.github.io/buttons.js"></script>
   </head>
   <body class="h-100">
@@ -43,25 +44,25 @@
           <div class="nav-wrapper">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link active" href="index.html">
+                <a class="nav-link active" href="/home">
                   <i class="material-icons">edit</i>
                   <span> Dashboard</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="components-blog-posts.html">
+                <a class="nav-link " href="/home/projects">
                   <i class="material-icons">vertical_split</i>
                   <span>Projects</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="add-new-post.html">
+                <a class="nav-link " href="/home/projectAdd">
                   <i class="material-icons">note_add</i>
                   <span>Add New Project</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="form-components.html">
+                <a class="nav-link " href="/home/orders">
                   <i class="material-icons">view_module</i>
                   <span>Orders</span>
                 </a>
