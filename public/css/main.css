@@ -1969,6 +1969,8 @@
 	input[type="email"],
 	input[type="tel"],
 	input[type="file"],
+	input[type="date"],
+	input[type="number"],
 	select,
 	textarea {
 		-moz-appearance: none;
@@ -1992,6 +1994,8 @@
 		input[type="email"]:invalid,
 		input[type="tel"]:invalid,
 		input[type="file"]:invalid,
+		input[type="date"]:invalid,
+	    input[type="number"]:invalid,
 		select:invalid,
 		textarea:invalid {
 			box-shadow: none;
@@ -2002,6 +2006,8 @@
 		input[type="email"]:focus,
 		input[type="tel"]:focus,
 		input[type="file"]:focus,
+		input[type="date"]:focus,
+	    input[type="number"]:focus,
 		select:focus,
 		textarea:focus {
 			border-color: #4bae77;
@@ -2045,6 +2051,8 @@
 	input[type="password"],
 	input[type="email"],
 	input[type="file"],
+	input[type="date"],
+	input[type="number"],
 	select {
 		height: 2.75em;
 	}
@@ -3116,7 +3124,7 @@
 /* Footer */
 
 	#footer {
-		padding: 6em 0;
+		padding: 10px 0;
 		background: #6cc091;
 		color: #fff;
 		text-align: center;
@@ -3133,10 +3141,10 @@
 		}
 
 		#footer .copyright {
-			color: rgba(255, 255, 255, 0.5);
-			font-size: 0.8em;
-			margin: 0 0 2em 0;
-			padding: 0;
+			color: rgba(255, 255, 255, 0.9);
+			font-size: 1em;
+			margin: 0 ;
+			padding: 7px 0;
 		}
 
 			#footer .copyright a {
@@ -3323,7 +3331,23 @@
 
 }
 
+#nav{
 
+	float: left;
+	margin-left:160px; 
+}
+
+#rightNav{
+	display: block;
+	position: absolute;
+	right: 0;
+	top: 0; 
+}
+
+#navPanel #rightNav{
+	left: 20px;
+	top: 390px
+}  
 .contactForm{
 	width: 70%;
 	margin-left:10%; 
@@ -3385,7 +3409,8 @@ video{
 	color: green;
 	border: green 2px dotted;
 	border-radius:5px; 
-	margin:25px 30%; 
+	margin:25px 30%;
+	padding: 10px; 
 }
 
 
@@ -3393,3 +3418,17 @@ input.danger,textarea.danger,select.danger{
 	
 	border: red solid 2px;
 }
+
+.v_link{
+	display: none;
+}
+
+
+article div.round img{width: 150px ;height: 150px;}
+
+h2#content{font-weight: 600 !important;}
+.lastDesc{padding:50px 0;margin-bottom:80px  }
+.lastDesc img{width:350px !important;height:350px  }
+.lastDesc .lastName{display:block;padding:2px;font-size:2em;color: #333   }
+
+a.videoLink{float: right;}

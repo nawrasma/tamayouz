@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Message;
+use App\Category;
+use App\Season;
+use App\Project;
 
 class PagesController extends Controller
 {
@@ -14,17 +17,26 @@ class PagesController extends Controller
     }
     public function home()
     {
-	    return view('welcome');
+        $Categories= Category::all();
+        $seasons= Season::all();
+        $projects= Project::all();
+        $best=Project::whereBetween('Pro_grade', [90, 100])
+                     ->orderBy('Pro_grade','desc')->take(3)
+                     ->get();
+        $last=Project::latest()->first();
+	    return view('welcome',['categories'=>$Categories,'seasons'=>$seasons,'projects'=>$projects,'best'=>$best,'last'=>$last]);
     }
 
     public function about()
     {
-    	return view('about');
+        $seasons= Season::all();
+    	return view('about',['seasons'=>$seasons]);
     }
 
     public function contact()
     {
-    	return view('contact');
+        $seasons= Season::all();
+    	return view('contact',['seasons'=>$seasons]);
     }
 
     public function contactMsg()
@@ -39,4 +51,6 @@ class PagesController extends Controller
         Message::create($attributes);
         return back();
     }
+
+   
 }

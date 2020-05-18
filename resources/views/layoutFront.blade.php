@@ -15,14 +15,16 @@
 					<a href="/" class="logo"><strong>Tamayouz </strong> Competition</a>
 					<nav id="nav">
 						<a href="/">Home</a>
-						<!-- <a href="index.html">Projects</a> -->
 						<div class="dropdown">
 						    <span class="dropbtn">Projects
 						    </span>
 						    <div id="myDropdown" class="dropdown-content">
-						      <a href="/projects/Software">Software</a>
-						      <a href="/projects/Networks">Networks</a>
-						      <a href="/projects/Hardware">Hardware</a>
+						    	@foreach ($seasons as $element)
+					    			<a href="/projects/{{ $element->id }}">Season {{ $element->name }}</a>		
+						    	@endforeach
+						      {{-- <a href="/projects/Software">Season 1</a>
+						      <a href="/projects/Networks">Season 2</a>
+						      <a href="/projects/Hardware">Season 3</a> --}}
 						    </div>
 						 </div> 
 						<a href="/about">About US</a>
@@ -38,11 +40,32 @@
 						    
 						  </form>
 						</div>
+						<nav id="rightNav">
+						@if ( Auth::user() )
+							{{-- <a href="/home">{{  Auth::user()->name }}</a> --}}
+							<div class="dropdown">
+						    	<span class="dropbtn">{{  Auth::user()->name }}</span>
+						    	<div id="myDropdown" class="dropdown-content">
+						    		<a class="dropdown-item" href="/home">
+											<i class="fa fa-user" aria-hidden="true"></i> Profile</a>
+                      				<a class="dropdown-item text-danger" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+					                      <i class="fa fa-sign-out" aria-hidden="true"></i>  {{ __('Logout') }} </a>
+					                      {{-- form for logout --}}
+					                      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+					                                        @csrf
+					                      </form>		
+						    	</div>
+							</div>
+						@else	
+							<a href="{{ route('login') }}">Login</a>
+							<a href="{{ route('register') }}">Register</a>
+						@endif
+						<a href=""><i class="fa fa-language fa-2x" aria-hidden="true"></i></a>
+						</nav>
 
-
-						<!-- <a href="generic.html">Generic</a>
-						<a href="elements.html">Elements</a> -->
 					</nav>
+					
 					<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
 				</div>
 			</header>
@@ -56,7 +79,7 @@
 			<footer id="footer">
 				<div class="inner">
 					
-					<h3>Add Project</h3>
+					{{-- <h3>Add Project</h3>
 					@include('flashMsg')
 					<form action="/addProject" method="post">
 						
@@ -77,8 +100,8 @@
 						<ul class="actions">
 							<li><input value="Send Project" class="button alt" type="submit"></li>
 						</ul>
-					</form>
-
+					</form> --}}
+					
 					<div class="copyright">
 						&copy; Tamayouz Competition - Follow  <a href=""> <i class="icon fa-lg fa-facebook-square"></i> Tamayouz </a>.
 					</div>
@@ -126,7 +149,8 @@
 
 					
 			</script>
-
+			
+		
 	</body>
 </html>
 

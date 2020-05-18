@@ -1,4 +1,4 @@
-@extends("layoutFront")
+@extends("layoutFront",$seasons)
 
 
 
@@ -16,21 +16,21 @@
                     <div class="flex ">
 
                         <div>
-                            <span class="icon fa-file-code-o"></span>
-                            <h3>Software</h3>
-                            <p>650 Projects</p>
+                            <span class="icon fa-list-ul"></span>
+                            <h3>Season</h3>
+                            <p>{{ $seasons->count() }} Seasons</p>
                         </div>
 
                         <div>
-                            <span class="icon fa-feed"></span>
-                            <h3>Networks</h3>
-                            <p>200 Projects</p>
+                            <span class="icon fa-braille"></span>
+                            <h3>Category</h3>
+                            <p>{{ $categories->count() }} Categories</p>
                         </div>
 
                         <div>
-                            <span class="icon fa-bug"></span>
-                            <h3>Hardware</h3>
-                            <p>500 Projects</p>
+                            <span class="icon fa-folder-open"></span>
+                            <h3>Project</h3>
+                            <p>{{ $projects->count() }} Projects</p>
                         </div>
 
                     </div>
@@ -45,43 +45,44 @@
         <!-- Three -->
             <section id="all_projects" class="wrapper align-center">
                 <div class="inner" >
+                    <h2 id="content">The Best Of Projects</h2>
                     <div class="flex flex-2">
+                        @foreach ($best as $item)
+                        
                         <article>
                             <div class="image round">
-                                <img src="images/pic01.jpg" alt="Pic 01" />
+                                <img src="{{ asset('images/'.$item->pro_photo) }}" alt="{{$item->pro_photo}}" />
                             </div>
                             <header>
-                                <h3>Software Projects</h3>
+                                <h3>{{ $item->pro_name }}</h3>
                             </header>
-                            <p>Morbi in sem quis dui placerat ornare. Pellentesquenisi<br />euismod in, pharetra a, ultricies in diam sed arcu. Cras<br />consequat  egestas augue vulputate.</p>
+                            <p>{{ substr($item->pro_desc,0,180) }}</p>
                             <footer>
-                                <a href="/projects/Software" class="button">Show More</a>
+                                <a href="/singleProject/{{$item->id}}" class="button">Show More</a>
                             </footer>
                         </article>
-                        <article>
-                            <div class="image round">
-                                <img src="images/pic02.jpg" alt="Pic 02" />
-                            </div>
-                            <header>
-                                <h3>Networks Projects</h3>
-                            </header>
-                            <p>Pellentesque fermentum dolor. Aliquam quam lectus<br />facilisis auctor, ultrices ut, elementum vulputate, nunc<br /> blandit ellenste egestagus commodo.</p>
-                            <footer>
-                                <a href="/projects/Networks" class="button">Show More</a>
-                            </footer>
-                        </article>
-                        <article>
-                            <div class="image round">
-                                <img src="images/pic02.jpg" alt="Pic 02" />
-                            </div>
-                            <header>
-                                <h3>Hardware Projects</h3>
-                            </header>
-                            <p>Morbi in sem quis dui placerat ornare. Pellentesquenisi<br />euismod in, pharetra a, ultricies in diam sed arcu. Cras<br />consequat  egestas augue vulputate.</p>
-                            <footer>
-                                <a href="/projects/Hardware" class="button">Show More</a>
-                            </footer>
-                        </article>
+
+                        @endforeach
+                    </div>
+                </div>
+            </section>
+
+            <hr  style="background-color:#6cc091;color:#6cc091;width:94%;margin-left:3%;font-size:15px;border:none;height:3px;" />
+
+            <section>
+                <div class="inner">
+                    <h2 id="content">The Last Project </h2>
+                    <div class="lastDesc">
+                        <p>
+                            <span class="image left">
+                                <img src="{{ asset('images/'.$last->pro_photo) }}" alt="{{$last->pro_photo}}" />
+                            </span>
+                            <span class="lastName">{{ $last->pro_name }}</span>
+
+                            {{ substr($last->pro_desc,0,1050) }}
+
+                            </p>
+                        <a href="/singleProject/{{$last->id}}" class="button">Show More</a>
                     </div>
                 </div>
             </section>

@@ -1,4 +1,4 @@
-@extends("project.layoutProject")
+@extends("project.layoutProject",$seasons)
 
 
 @section('title','Projects')
@@ -12,8 +12,8 @@
 			<section id="main" class="wrapper">
 				<div class="inner">
 					<header class="align-center">
-						<h2>Projects</h2>
-						<p><strong>Domain :</strong> {{$domain}}  </p>
+						<h2>{{$baseSeason->name}}</h2>
+						<p>{{substr($baseSeason->desc, 0,450 ) }} </p>
 					</header>
 
 					<!-- Intro -->

@@ -1,4 +1,4 @@
-@extends("project.layoutProject")
+@extends("project.layoutProject",$seasons)
 
 
 @section('title','Search Projects')

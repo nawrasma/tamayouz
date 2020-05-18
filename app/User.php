@@ -36,4 +36,32 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public function details()
+    {
+        return $this->hasOne('App\UserDetails');
+    }
+
+    public function season()
+    {
+        return $this->hasOne('App\Season');
+    }
+
+    public function project()
+    {
+        return $this->hasOne('App\Project');   
+    }
+
+   public function getImageUser()
+   {
+       return $this->details->user_img;
+   }
+
+   public function getRoleUser()
+   {
+       return $this->details->type;
+   }
+
+
 }

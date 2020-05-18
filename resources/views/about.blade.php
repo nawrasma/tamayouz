@@ -1,4 +1,4 @@
-@extends("layoutFront")
+@extends("layoutFront",$seasons)
 
 
 @section('title','About Us')
