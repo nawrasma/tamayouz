@@ -30,8 +30,8 @@ class ProjectController extends Controller
     {
         $seasons= Season::all();
     	$project = Project::where('id', $id)->first();
-        dd($project->id);
-    	//return view('project.singleProject',['project'=>$project,'seasons'=>$seasons]);
+        //dd($project->id);
+    	return view('project.singleProject',['project'=>$project,'seasons'=>$seasons]);
     }
 
     public function search_project()
